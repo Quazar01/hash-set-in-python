@@ -100,6 +100,7 @@ class HashSet:
         return self.size
     # Removes word from set if there, does nothing
     # if word not in set
+
     def remove(self, word):
         hash_value = self.get_hash(word)
         bucket_num = hash_value % len(self.buckets)
