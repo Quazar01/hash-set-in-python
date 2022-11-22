@@ -59,7 +59,16 @@ class Node:
         return s
 
     def count(self):
-        pass       # Placeholder code ==> to be replaced
+        size = 0
+        if self.value:
+            size += 1
+        if self.left:
+            size += self.left.count()
+
+        if self.right:
+            size += self.right.count()
+
+        return size
 
     def get(self, key):
 
@@ -100,7 +109,6 @@ class Node:
         else:
             return right_depth
 
-
     def count_leafs(self):
         left_leafs = 0
         right_leafs = 0
@@ -137,6 +145,8 @@ class Node:
 # to the root node ==> the Node class.
 #
 # The class below is complete ==> not to be changed
+
+
 @dataclass
 class BstMap:
     root: Node = None
@@ -172,7 +182,12 @@ class BstMap:
             return None
         else:
             return self.root.get(key)
-
+            
+    def count(self):
+        if self.root is None:
+            return None
+        else:
+            return self.root.count()
     # Returns the maximum tree depth. That is, the length
     # (counted in nodes) of the longest root-to-leaf path
     def max_depth(self):
