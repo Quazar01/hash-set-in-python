@@ -21,6 +21,10 @@ class Node:
     def put(self, key, value):
         if self.value is None:
             self.value == value
+        
+        #Override existing key.
+        if self.key == key:
+            self.value = value
 
         elif self.value is None:
             self.key = key
