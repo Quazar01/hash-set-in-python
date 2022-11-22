@@ -19,7 +19,28 @@ class Node:
     right: Any = None       # right child (a Node)
 
     def put(self, key, value):
-        pass       # Placeholder code ==> to be replaced
+        if self.value is None:
+            self.value == value
+            
+        elif self.value is None:
+            self.key = key
+            self.value = value
+
+        elif key < self.key:
+            if self.left is None:
+                self.left = Node(key, value, None, None)
+
+            else:
+
+                self.left.put(key, value)
+
+        else:
+            if self.right is None:
+                self.right = Node(key, value, None, None)
+
+            else:
+                self.right.put(key, value)
+
 
     def to_string(self):
         
