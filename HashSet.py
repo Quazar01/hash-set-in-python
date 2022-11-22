@@ -80,11 +80,20 @@ class HashSet:
 
     # Returns current number of elements in set
     def get_size(self):
-        pass    # Placeholder code ==> to be replaced
+        num_of_elements = 0
+        for bucket in self.buckets:
+            num_of_elements += len(bucket)
+
+        return num_of_elements
 
     # Returns True if word in set, otherwise False
     def contains(self, word):
-        pass    # Placeholder code ==> to be replaced
+        hash_value = self.get_hash(word)
+        bucket_num = hash_value % self.size
+        if word in self.buckets[bucket_num]:
+            return True
+        else:
+            return False
 
     # Returns current size of bucket list
     def bucket_list_size(self):
