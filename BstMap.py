@@ -21,7 +21,7 @@ class Node:
     def put(self, key, value):
         if self.value is None:
             self.value == value
-            
+
         elif self.value is None:
             self.key = key
             self.value = value
@@ -41,10 +41,19 @@ class Node:
             else:
                 self.right.put(key, value)
 
-
     def to_string(self):
-        
-        return ""  # Placeholder code to avoid crash in demo program. To be replaced
+
+        s = ''
+
+        if self.left:
+            s += self.left.to_string()
+
+        s += '( ' + str(self.key) + ', ' + str(self.value) + ') '
+
+        if self.right:
+            s += self.right.to_string()
+
+        return s
 
     def count(self):
         pass       # Placeholder code ==> to be replaced
