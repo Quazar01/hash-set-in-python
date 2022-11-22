@@ -118,4 +118,10 @@ class HashSet:
     # Returns the ratio of buckets of lenght zero.
     # That is: number of zero buckets divided by number of buckets
     def zero_bucket_ratio(self):
-        pass    # Placeholder code ==> to be replaced
+        zero_buckets = 0
+        for bucket in self.buckets:
+            if len(bucket) == 0:
+                zero_buckets += 1
+
+        ratio = zero_buckets / self.size
+        return ratio
