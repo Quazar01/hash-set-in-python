@@ -106,7 +106,12 @@ class HashSet:
 
     # Returns the size of the bucket with most elements
     def max_bucket_size(self):
-        pass    # Placeholder code ==> to be replaced
+        maximus = 0
+        for bucket in self.buckets:
+            if len(bucket) > maximus:
+                maximus = len(bucket)
+
+        return maximus
 
     # Returns the ratio of buckets of lenght zero.
     # That is: number of zero buckets divided by number of buckets
