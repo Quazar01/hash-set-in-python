@@ -63,7 +63,21 @@ class Node:
         pass       # Placeholder code ==> to be replaced
 
     def get(self, key):
-        pass    # Placeholder code ==> to be replaced
+        
+        if self.key == key:
+            return self.value
+
+        elif key < self.key:
+            if self.left:
+                return self.left.get(key)
+
+        elif key > self.key:
+            if self.right:
+                return self.right.get(key)
+
+        else:
+            return 'None'
+
 
     def max_depth(self):
         pass     # Placeholder code ==> to be replaced
