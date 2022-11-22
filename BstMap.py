@@ -124,7 +124,8 @@ class Node:
 
         t = (self.key, self.value)
 
-        lst.append(t)
+        if len(t[0]) > 4:
+            lst.append(t)
 
         if self.right:
             self.right.as_list(lst)
