@@ -47,7 +47,7 @@ hash_lst.init()
 map = bst.BstMap()
 
 path = os.getcwd()
-life_of_brian = 'brian_13375_words.txt'
+life_of_brian = 'brian_10761_words.txt'
 swedish_news = 'swe_news_15103923_words.txt'
 
 print("Results for Life of Brian file:\n")

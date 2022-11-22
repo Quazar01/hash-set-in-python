@@ -23,7 +23,7 @@ class Node:
             self.value == value
         # Override existing key.
         if self.key == key:
-            self.value = value
+            self.value += 1
 
         elif self.value is None:
             self.key = key
@@ -182,7 +182,7 @@ class BstMap:
             return None
         else:
             return self.root.get(key)
-            
+
     def count(self):
         if self.root is None:
             return None
