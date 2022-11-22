@@ -116,10 +116,20 @@ class Node:
             return left_leafs + right_leafs
         # We do a left-to-right in-order traversal of the tree
         # to get the key-value pairs sorted base on their keys
-    def as_list(self, lst):
-        # Placeholder code to avoid crash in demo program. To be replaced
-        return [None]
 
+    def as_list(self, lst):
+
+        if self.left:
+            self.left.as_list(lst)
+
+        t = (self.key, self.value)
+
+        lst.append(t)
+
+        if self.right:
+            self.right.as_list(lst)
+
+        return lst
 
 # The BstMap class is rather simple. It basically just takes care
 # of the case when the map is empty. All other cases are delegated
