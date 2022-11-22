@@ -79,6 +79,11 @@ class Node:
 
     def max_depth(self):
 
+        # Start from one because if we have for example only...
+        # one node to the left then we check if left node exist...
+        # and we recurse the function in that only left node which
+        # it will return 0 as there are no nodes attached to it.
+        # and that will give us 1 node
         left_depth = 1
         right_depth = 1
         if self is None:
@@ -95,6 +100,20 @@ class Node:
         else:
             return right_depth
 
+
+    def count_leafs(self):
+        left_leafs = 0
+        right_leafs = 0
+        if self is None:
+            return 0
+        if (self.left is None) and self.right is None:
+            return 1
+        else:
+            if self.left:
+                left_leafs += self.left.count_leafs()
+            if self.right:
+                right_leafs += self.right.count_leafs()
+            return left_leafs + right_leafs
         # We do a left-to-right in-order traversal of the tree
         # to get the key-value pairs sorted base on their keys
     def as_list(self, lst):
@@ -160,3 +179,9 @@ class BstMap:
             return lst
         else:
             return self.root.as_list(lst)
+
+    def count_leafs(self):
+        if self.root is None:
+            return 0
+        else:
+            return self.root.count_leafs()
