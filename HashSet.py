@@ -97,12 +97,14 @@ class HashSet:
 
     # Returns current size of bucket list
     def bucket_list_size(self):
-        pass    # Placeholder code ==> to be replaced
-
+        return self.size
     # Removes word from set if there, does nothing
     # if word not in set
     def remove(self, word):
-        pass    # Placeholder code ==> to be replaced
+        hash_value = self.get_hash(word)
+        bucket_num = hash_value % len(self.buckets)
+        if word in self.buckets[bucket_num]:
+            self.buckets[bucket_num].remove(word)
 
     # Returns the size of the bucket with most elements
     def max_bucket_size(self):
