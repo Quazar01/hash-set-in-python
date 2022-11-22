@@ -70,7 +70,13 @@ class HashSet:
 
     # Returns a string representation of the set content
     def to_string(self):
-        pass    # Placeholder code ==> to be replaced
+
+        s = ''
+        for bucket in self.buckets:
+            for element in bucket:
+                s += element + ' '
+        return s
+        return self.buckets
 
     # Returns current number of elements in set
     def get_size(self):
