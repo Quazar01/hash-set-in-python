@@ -21,8 +21,7 @@ class Node:
     def put(self, key, value):
         if self.value is None:
             self.value == value
-        
-        #Override existing key.
+        # Override existing key.
         if self.key == key:
             self.value = value
 
@@ -63,7 +62,7 @@ class Node:
         pass       # Placeholder code ==> to be replaced
 
     def get(self, key):
-        
+
         if self.key == key:
             return self.value
 
@@ -78,12 +77,26 @@ class Node:
         else:
             return 'None'
 
-
     def max_depth(self):
-        pass     # Placeholder code ==> to be replaced
 
-    # We do a left-to-right in-order traversal of the tree
-    # to get the key-value pairs sorted base on their keys
+        left_depth = 1
+        right_depth = 1
+        if self is None:
+            return 0
+        else:
+
+            if self.left:
+                left_depth += self.left.max_depth()
+            if self.right:
+                right_depth += self.right.max_depth()
+
+        if left_depth > right_depth:
+            return left_depth
+        else:
+            return right_depth
+
+        # We do a left-to-right in-order traversal of the tree
+        # to get the key-value pairs sorted base on their keys
     def as_list(self, lst):
         # Placeholder code to avoid crash in demo program. To be replaced
         return [None]
