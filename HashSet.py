@@ -6,22 +6,67 @@ from typing import List
 class HashSet:
     buckets: List[List] = None
     size: int = 0
+    num_of_elements = 0
 
     def init(self):
-        self.size = 0
+        self.size = 8
+        self.num_of_elements = 0
         self.buckets = [[] for i in range(8)]
 
-    # Computes hash value for a word (a string)
     def get_hash(self, word):
-        pass    # Placeholder code ==> to be replaced
 
-    # Doubles size of bucket list
+        # djb2 is faster than multiplying the letter
+        # with the constant to the power of the letter's index.
+        # g = 31
+        hash = 5381  # 5381 is found the best prime number for this algorithm.
+        # hash_value = 0
+        for letter in word:
+            # djb2 hash function.
+            # Found on: https://python.algorithms-library.com/hashes/djb2
+            hash = ((hash * (2**5)) + hash) + ord(letter)
+
+            # Some hash function i found on youtube from
+            # Dr. Rob Edwards from San Diego State University.
+
+            # index = word.index(letter)
+            # hash_value += ord(letter) * (g ** index)
+
+            # Basic hash function.
+            # hash_value += ord(letter)
+
+        return hash
+
     def rehash(self):
-        pass    # Placeholder code ==> to be replaced
+        # Doubles size of bucket list
+        self.size *= 2
+        copy_set = self.buckets.copy()
+        self.buckets.clear()
+        self.buckets = [[] for i in range(self.size)]
+        # Filling the enlarged set with the elements from
+        # the copied list.
+        for bucket in copy_set:
+            for element in bucket:
+                # self.add(element)
+                hash_value = self.get_hash(element)
+                bucket_num = hash_value % self.size
+
+                if element not in self.buckets[bucket_num]:
+                    self.buckets[bucket_num].append(element)
 
     # Adds a word to set if not already added
+
     def add(self, word):
-        pass    # Placeholder code ==> to be replaced
+
+        hash_value = self.get_hash(word)
+        # Get which bucket the word would be put in.
+        bucket_num = hash_value % self.size
+
+        if word not in self.buckets[bucket_num]:
+            self.buckets[bucket_num].append(word)
+            self.num_of_elements += 1
+
+        if self.num_of_elements == self.size:
+            self.rehash()
 
     # Returns a string representation of the set content
     def to_string(self):
