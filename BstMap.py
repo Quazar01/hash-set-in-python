@@ -19,15 +19,14 @@ class Node:
     right: Any = None       # right child (a Node)
 
     def put(self, key, value):
-        if self.value is None:
-            self.value == value
+        
+        if self.key is None:
+            self.key = key
+            self.value = value
+
         # Override existing key.
         if self.key == key:
             self.value += 1
-
-        elif self.value is None:
-            self.key = key
-            self.value = value
 
         elif key < self.key:
             if self.left is None:
@@ -190,6 +189,7 @@ class BstMap:
             return self.root.count()
     # Returns the maximum tree depth. That is, the length
     # (counted in nodes) of the longest root-to-leaf path
+
     def max_depth(self):
         if self.root is None:
             return 0

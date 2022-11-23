@@ -30,7 +30,6 @@ def unique_words(path, name):
                     # Otherwise, increase the word's value by 1.
                     words_dict[word] += 1
 
-        # Got the sorted function from freecodecamp.com
         # Sort the dict by it's value in reverse
         sorted_list = sorted(words_dict.items(),
                              key=lambda x: x[1], reverse=True)
@@ -39,6 +38,7 @@ def unique_words(path, name):
         for i in range(10):
             k = sorted_list[i][0]
             v = sorted_list[i][1]
+
             # Assign the key and the value to the most_freq_words dict.
             most_freq_words[k] = v
 
@@ -50,7 +50,7 @@ path = os.getcwd()
 # lIFE OF BRIAN
 print("Results for Life of Brian file:\n")
 unique_words_count, most_freq_words = unique_words(
-    path, 'brian_13375_words.txt')
+    path, 'brian_10761_words.txt')
 
 print(f'There are {unique_words_count} unique words.\n')
 print("Top 10 most frequented words:")

@@ -58,5 +58,5 @@ implement(path, life_of_brian)
 hash_lst.init()
 map = bst.BstMap()
 print('\n\nResults for Swedish News file: ')
-# It takes around 2.5 minutes in order to process Swedish News!!
+# It takes around 2:42 minutes in order to process Swedish News!!
 implement(path, swedish_news)

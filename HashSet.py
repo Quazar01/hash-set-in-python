@@ -17,24 +17,25 @@ class HashSet:
 
         # djb2 is faster than multiplying the letter
         # with the constant to the power of the letter's index.
-        g = 31
-        # hash = 5381  # 5381 is found the best prime number for this algorithm.
-        hash_value = 0
+        # p = 31
+        # 5381 is found the best prime number for this algorithm.
+        hash_djb2 = 5381
+        # hash_value = 0
         for letter in word:
             # djb2 hash function.
             # Found on: https://python.algorithms-library.com/hashes/djb2
-            # hash = ((hash * (2**5)) + hash) + ord(letter)
+            hash_djb2 = ((hash_djb2 * (2**5)) + hash_djb2) + ord(letter)
 
             # Some hash function i found on youtube from
             # Dr. Rob Edwards from San Diego State University.
 
-            index = word.index(letter)
-            hash_value += ord(letter) * (g ** index)
+            # index = word.index(letter)
+            # hash_value += ord(letter) * (p ** index)
 
             # Basic hash function.
             # hash_value += ord(letter)
 
-        return hash_value
+        return hash_djb2
 
     def rehash(self):
         # Doubles size of bucket list
