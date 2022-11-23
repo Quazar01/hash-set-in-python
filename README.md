@@ -261,7 +261,7 @@ The two text files in question here are `life_of_brian` and `swedish_news_2020`
   - For `swedish_news_2020`:
 * Zero bucket ratio:
   - For `life of brian`: `0.38`
-  - For `swedish_news_2020`:
+  - For `swedish_news_2020`: `0.46`
 
 - Total node count:
   - For `life of brian`: `2004`
