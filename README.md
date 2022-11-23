@@ -41,16 +41,17 @@ The two text files in question here are `life_of_brian` and `swedish_news_2020`
   In this way we got each word and its frequency in the dictionary. That dictionary is sorted in post-order by its values and inserted the top 10 words and their values into another dictionary.
 
   - Top 10 most frequented words for `life of brian`:
-    _ brian: 368
-    _ crowd: 161
-    _ centurion: 121
-    _ mother: 104
-    _ right: 99
-    _ crucifixion: 78
-    _ pilate: 68
-    _ pontius: 64
-    _ don't: 59
-    _ rogers: 52
+
+    - brian: 368
+    - crowd: 161
+    - centurion: 121
+    - mother: 104
+    - right: 99
+    - crucifixion: 78
+    - pilate: 68
+    - pontius: 64
+    - don't: 59
+    - rogers: 52
 
   - Top 10 most frequented words for `swedish news 2020`:
     - under: 54018
