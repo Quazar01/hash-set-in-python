@@ -39,32 +39,30 @@ The two text files in question here are `life_of_brian` and `swedish_news_2020`
 
 - While iterating through the words list the program adds each word as the key into the dictionary, and the value of that key is (1), but if the word already exists in the dictionary, then it increases its value by one.
   In this way we got each word and its frequency in the dictionary. That dictionary is sorted in post-order by its values and inserted the top 10 words and their values into another dictionary.
-  ``Top 10 most frequented words for`life of brian`
-  brian: 368
-  crowd: 161
-  centurion: 121
-  mother: 104
-  right: 99
-  crucifixion: 78
-  pilate: 68
-  pontius: 64
-  don't: 59
-  rogers: 52
 
-` `
-Top 10 most frequented words for `swedish news 2020`
-under: 54018
-säger: 47539
-efter: 44058
-kommer: 42839
-eller: 32064
-också: 30472
-sedan: 30375
-andra: 28043
-finns: 27576
-många: 26810
+  - Top 10 most frequented words for `life of brian`:
+    _ brian: 368
+    _ crowd: 161
+    _ centurion: 121
+    _ mother: 104
+    _ right: 99
+    _ crucifixion: 78
+    _ pilate: 68
+    _ pontius: 64
+    _ don't: 59
+    _ rogers: 52
 
-``
+  - Top 10 most frequented words for `swedish news 2020`:
+    - under: 54018
+    - säger: 47539
+    - efter: 44058
+    - kommer: 42839
+    - eller: 32064
+    - också: 30472
+    - sedan: 30375
+    - andra: 28043
+    - finns: 27576
+    - många: 26810
 
 ## Part 2: Implementing data structures
 
@@ -228,30 +226,31 @@ många: 26810
 - Unique words count:
 
   - `life of brian` got `2004` unique words of the total `10761` words.
-    -Those words are:
-    brian: 368
-    crowd: 161
-    centurion: 121
-    mother: 104
-    right: 99
-    crucifixion: 78
-    pilate: 68
-    pontius: 64
-    don't: 59
-    rogers: 52
+
+    - Those words are:
+      - brian: 368
+      - crowd: 161
+      - centurion: 121
+      - mother: 104
+      - right: 99
+      - crucifixion: 78
+      - pilate: 68
+      - pontius: 64
+      - don't: 59
+      - rogers: 52
 
   - `swedish_news_2020` got `412587` unique words of the total `15103923` words.
     - Those words are:
-      under: 54018
-      säger: 47539
-      efter: 44058
-      kommer: 42839
-      eller: 32064
-      också: 30472
-      sedan: 30375
-      andra: 28043
-      finns: 27576
-      många: 26810
+      - under: 54018
+      - säger: 47539
+      - efter: 44058
+      - kommer: 42839
+      - eller: 32064
+      - också: 30472
+      - sedan: 30375
+      - andra: 28043
+      - finns: 27576
+      - många: 26810
 
 * Bucket list size is:
   - For `life of brian`: `2048`
